@@ -14,7 +14,7 @@ const app = express();
 // Define Allowed Origins without Trailing Slashes
 const allowedOrigins = [
     'http://localhost:5173',
-    "https://pen-pencil-frontend.vercel.app/",
+    "https://pen-pencil-frontend.vercel.app",
 ];
 
 // CORS Configuration
