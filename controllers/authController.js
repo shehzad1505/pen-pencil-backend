@@ -95,10 +95,10 @@ exports.signin = async (req, res) => {
         
         // Setting cookie with credentials and domain considerations
         res.cookie('Authorization', 'Bearer ' + token, {
-            expires: new Date(Date.now() + 8 * 3600000), // 8 hours
+            expires: new Date(Date.now() + 8 * 3600000),
             httpOnly: true, 
-            secure: false, // Set to true in production (HTTPS)
-            sameSite: 'Lax', // 'None' requires 'secure: true'
+            secure: process.env.NODE_ENV === 'production' ? true : false,
+            sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
         });
 
 
